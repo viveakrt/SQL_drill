@@ -14,3 +14,15 @@ CREATE TABLE IF NOT EXISTS `patient`.`Doctor` (
     `Secretory` VARCHAR(100),
     PRIMARY KEY (`idDoctor`)
 );
+
+CREATE TABLE IF NOT EXISTS `patient`.`Prescription` (
+    `idPrescription` INT NOT NULL AUTO_INCREMENT,
+    `Drug` VARCHAR(100),
+    `Date` DATETIME,
+    `Dosage` INT,
+    `idDoctor` INT NOT NULL,
+    `idPatient` INT NOT NULL,
+    PRIMARY KEY (`idPrescription`),
+    FOREIGN KEY (`idDoctor`) REFERENCES `patient`.`Doctor` (`idDoctor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    FOREIGN KEY (`idPatient`) REFERENCES `patient`.`Patient` (`idPatient`) ON DELETE NO ACTION ON UPDATE NO ACTION
+);

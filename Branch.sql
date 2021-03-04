@@ -1,0 +1,7 @@
+CREATE SCHEMA IF NOT EXISTS `branch`;
+
+CREATE TABLE IF NOT EXISTS `branch`.`Branch` (
+    `Branch` INT(11) NOT NULL AUTO_INCREMENT,
+    `Branch_Addr` VARCHAR(100) NULL DEFAULT NULL,
+    PRIMARY KEY (`Branch`)
+);

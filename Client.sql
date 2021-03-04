@@ -30,3 +30,12 @@ CREATE TABLE IF NOT EXISTS `client`.`Contract` (
     PRIMARY KEY (`idContract`),
     FOREIGN KEY (`idClient`) REFERENCES `client`.`Client` (`idClient`) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
+
+CREATE TABLE IF NOT EXISTS `client`.`Project` (
+    `idStaff` INT NOT NULL,
+    `idContract` INT NOT NULL,
+    `Staff_Location` VARCHAR(100) NULL DEFAULT NULL,
+    PRIMARY KEY (`idStaff`, `idContract`),
+    FOREIGN KEY (`idStaff`) REFERENCES `client`.`Staff` (`idStaff`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    FOREIGN KEY (`idContract`) REFERENCES `client`.`Contract` (`idContract`) ON DELETE NO ACTION ON UPDATE NO ACTION
+);

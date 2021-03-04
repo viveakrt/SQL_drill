@@ -17,3 +17,12 @@ CREATE TABLE IF NOT EXISTS `doctor`.`Patient` (
     FOREIGN KEY (`idDoctor`) REFERENCES `doctor`.`Doctor` (`idDoctor`)
 );
 
+CREATE TABLE IF NOT EXISTS `doctor`.`Prescription` (
+    `idPrescription` INT NOT NULL AUTO_INCREMENT,
+    `Drug` VARCHAR(100),
+    `Date` DATETIME,
+    `Dosage` INT,
+    `idPatient` INT NOT NULL,
+    PRIMARY KEY (`idPrescription`),
+    FOREIGN KEY (`idPatient`) REFERENCES `doctor`.`Patient` (`idPatient`)
+);

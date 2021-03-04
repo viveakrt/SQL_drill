@@ -22,3 +22,11 @@ CREATE TABLE IF NOT EXISTS `client`.`Staff` (
     PRIMARY KEY (`idStaff`)
 );
 
+CREATE TABLE IF NOT EXISTS `client`.`Contract` (
+    `idContract` INT NOT NULL,
+    `idClient` INT NULL DEFAULT NULL,
+    `Estimated_Cost` INT NULL DEFAULT NULL,
+    `Completion_Date` DATE NULL DEFAULT NULL,
+    PRIMARY KEY (`idContract`),
+    FOREIGN KEY (`idClient`) REFERENCES `client`.`Client` (`idClient`) ON DELETE NO ACTION ON UPDATE NO ACTION
+);

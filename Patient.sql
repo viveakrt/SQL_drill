@@ -8,3 +8,9 @@ CREATE TABLE IF NOT EXISTS `patient`.`Patient`(
     PRIMARY KEY (`idPatient`)
 );
 
+CREATE TABLE IF NOT EXISTS `patient`.`Doctor` (
+    `idDoctor` INT NOT NULL AUTO_INCREMENT,
+    `Doctor` VARCHAR(100),
+    `Secretory` VARCHAR(100),
+    PRIMARY KEY (`idDoctor`)
+);

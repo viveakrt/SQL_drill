@@ -15,3 +15,10 @@ CREATE TABLE IF NOT EXISTS `client`.`Manager` (
     `Manager_Location` VARCHAR(100) NULL DEFAULT NULL,
     PRIMARY KEY (`idManager`)
 );
+
+CREATE TABLE IF NOT EXISTS `client`.`Staff` (
+    `idStaff` INT(11) NOT NULL,
+    `Staff_Name` VARCHAR(45) NULL DEFAULT NULL,
+    PRIMARY KEY (`idStaff`)
+);
+
